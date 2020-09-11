@@ -11,7 +11,7 @@ steps:
 
 - name: test
 image: node:alpine3.12
-commands:
+commands: 
   - npm run test
 
 - name: build
