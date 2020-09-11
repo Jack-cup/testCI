@@ -1,19 +1,15 @@
 ---
-kind: pipeline
+kind: web
 type: docker
 name: default
 
 steps:
-- name: npm install
-  image: node:alpine
-  commands:
-  - npm i --registry https://registry.npm.taobao.org
+  - name: npm install
+    image: node:alpine3.12
+    commands:
+      - npm i --registry https://registry.npm.taobao.org
+# - name: test
+# image: node:alpine
+# commands:
+# - npm run test
 
-- name: test
-image: node:alpine
-commands:
-- npm run test
-
-
-
-...
