@@ -8,8 +8,27 @@ steps:
     image: node:alpine3.12
     commands:
       - npm i --registry https://registry.npm.taobao.org
-# - name: test
-# image: node:alpine
-# commands:
-# - npm run test
+
+  - name: test
+  image: node:alpine
+  commands:
+    - npm run test
+
+  - name: build
+  image: node:alpine
+  commands:
+    - npm run build
+
+  - name: rsync
+  image: drillster/drone-rsync
+  environment:
+    RSYNC_KEY:
+      from_secret: rsync_key
+  settings:
+    user: some-user
+    hosts:
+      - 140.143.1.235
+    source: .vuepress/dist/*
+    target: /data
+    secrets: [ rsync_key ]
 
