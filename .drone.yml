@@ -31,4 +31,5 @@ steps:
     source: .vuepress/dist/*
     target: /data
     secrets: [ rsync_key ]
+. . .
 
