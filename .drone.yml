@@ -1,7 +1,7 @@
 ---
-kind: web
+kind: pipeline
 type: docker
-name: default
+name: web
 
 steps:
   - name: npm install
